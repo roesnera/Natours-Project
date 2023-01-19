@@ -1,0 +1,40 @@
+.header {
+    height:95vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)), 
+    url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    /* position used to allow for relative positioning of logo*/
+    position: relative;
+
+    /* sets a clip path for background image to be clipped */
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo{
+        height: 3.5rem;
+        transition: all 0.1s;
+
+        &:hover{
+            animation-name: getBigger;
+            animation-duration: 0.2s;
+            transform: scale(1.5);
+        }
+    }
+
+    &__text-box {
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
