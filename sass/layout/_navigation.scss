@@ -54,9 +54,9 @@
         text-align: center;
     }
 
-    &__item {
+    // &__item {
 
-    }
+    // }
 
     &__link {
         &:link,
@@ -84,7 +84,6 @@
             color: $color-primary;
             transform: translateX(1rem);
             box-shadow: 0 1rem 3rem rgba($color-black, .2);
-
         }
     }
 

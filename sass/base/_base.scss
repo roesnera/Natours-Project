@@ -8,11 +8,54 @@
 }
 
 html {
-    /* sets font size relative to user's browser settings for responsive styling */
-    font-size: 62.5%;
+    /* sets font size relative to user's browser settings for responsive styling, defines what 1rem is */
+    font-size: 62.5%; // 1rem = 10px
+
+    @include respond(tab-land) {
+        font-size: 56.25%; //1rem = 9px
+    }
+    @include respond(tab-port) {
+        font-size: 50%; //1rem = 8px
+    }
+    // @include respond(phone) {
+    //     font-size: 50%;
+    // }
+    @include respond(big-desktop) {
+        font-size: 75%; //1rem = 12px
+    }
 }
 
 body {
     /* specifies that padding is folded into height and width calculations */
     box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
 }
+
+/* 
+    BREAKPOINTS:
+    - We use breakpoints to create a resposive design that keeps in mind the various different screen sizes
+    - In our case, we used a desktop first design pattern
+
+        A BAD way to pick breakpoints
+            use just the most popular breakpoints for the most common devices
+        
+        A GOOD way to pick breakpoints
+            use device size ranges
+            Based on these ranges, the following breakpoints make sense
+                <=600px width - phone screens
+                <=900px width - tablets in portrait
+                <=1200px width - tablets in landscape
+                <=1800px width - desktops
+                anything larger would be a large desktop
+
+
+        A PERFECT way to pick breakpoints
+            don't consider device sizes
+            think about when your web page starts to look weird
+
+ORDER of responsive adjusting: Base + Typography > general layout + grid > page layout > components
+*/
