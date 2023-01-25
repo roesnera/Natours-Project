@@ -9,6 +9,16 @@
     font-size: $default-font-size;
     transform: skewX(-12deg);
 
+    @include respond(tab-port){
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+
+    @include respond(phone){
+        transform: skew(0);
+    }
+
     // The below wont work because you can only transform an element once
     // the .story__shape class has a more specific transform, so we have to apply this manually to each child element
     // & > * {
@@ -33,6 +43,10 @@
 
         // unskews circle
         transform: translateX(-3rem) skewX(12deg);
+
+        @include respond(phone) {
+            transform: translateX(-3rem) skewX(0);
+        }
     }
 
     &__img{
@@ -43,6 +57,10 @@
 
     &__text {
         transform: skewX(12deg);
+
+        @include respond(phone){
+            transform: skew(0);
+        }
     }
 
     &__caption {
