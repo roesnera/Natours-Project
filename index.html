@@ -76,9 +76,22 @@
                     </div>
                     <div class="col-1-of-2">
                         <div class="composition">
-                            <img src="img/nat-1.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
-                            <img src="img/nat-2.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
+
+                            <!-- This section determines which image to use based on user's screen pixel density -->
+
+                            <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-1.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
+
+                            <!-- <img src="img/nat-1.jpg" alt="Photo 1" class="composition__photo composition__photo--p1"> -->
+
+                            <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-2.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
+
+                            <!-- <img src="img/nat-2.jpg" alt="Photo 2" class="composition__photo composition__photo--p2"> -->
+
+                            <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-3.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+
                             <img src="img/nat-3.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+
+
                         </div>
                     </div>
                 </div>
@@ -337,7 +350,15 @@
 
         <footer class="footer">
             <div class="footer__logo-box">
-                <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+                <!-- picture element allows us to use art direction to detect screen size and determine which images to use depending on screen size -->
+                <picture class="footer__logo">
+                    <source srcset="img/logo-green-small-2x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width:37.5em)">
+
+                    <!-- srcset attribute allows us to change pixel density depending on display resolution -->
+                    <img srcset="img/logo-green-2x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" >
+                </picture>
+
+                <img srcset="img/logo-green-2x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo">
             </div>
 
             <div class="row">
@@ -360,21 +381,21 @@
             </div>
         </footer>
         
-<div class="popup" id="popup">
-    <div class="popup__content">
-        <div class="popup__left">
-            <img src="./img/nat-8.jpg" alt="Tour photo" class="popup__img">
-            <img src="./img/nat-9.jpg" alt="Tour photo" class="popup__img">
+        <div class="popup" id="popup">
+            <div class="popup__content">
+                <div class="popup__left">
+                    <img src="./img/nat-8.jpg" alt="Tour photo" class="popup__img">
+                    <img src="./img/nat-9.jpg" alt="Tour photo" class="popup__img">
+                </div>
+                <div class="popup__right">
+                    <a href="#tours" class="popup__close">&times;</a>
+                    <h2 class="heading-secondary u-margin-bottom-medium">Start booking now!</h2>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking.</h3>
+                    <p class="popup__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis nunc sed blandit libero. Pellentesque dignissim enim sit amet venenatis urna cursus. Pellentesque habitant morbi tristique senectus. Nisi quis eleifend quam adipiscing. Amet dictum sit amet justo donec enim diam vulputate. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Dignissim sodales ut eu sem integer vitae justo. Viverra orci sagittis eu volutpat odio facilisis mauris sit. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus. Luctus venenatis lectus magna fringilla. Nulla pellentesque dignissim enim sit amet venenatis.</p>
+                    <a href="#" class="btn btn--green">Book now</a>
+                </div>
+            </div>
         </div>
-        <div class="popup__right">
-            <a href="#tours" class="popup__close">&times;</a>
-            <h2 class="heading-secondary u-margin-bottom-medium">Start booking now!</h2>
-            <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking.</h3>
-            <p class="popup__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis nunc sed blandit libero. Pellentesque dignissim enim sit amet venenatis urna cursus. Pellentesque habitant morbi tristique senectus. Nisi quis eleifend quam adipiscing. Amet dictum sit amet justo donec enim diam vulputate. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Dignissim sodales ut eu sem integer vitae justo. Viverra orci sagittis eu volutpat odio facilisis mauris sit. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus. Luctus venenatis lectus magna fringilla. Nulla pellentesque dignissim enim sit amet venenatis.</p>
-            <a href="#" class="btn btn--green">Book now</a>
-        </div>
-    </div>
-</div>
 
         <!-- 
             <section class="grid-test">

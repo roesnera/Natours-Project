@@ -35,6 +35,11 @@ body {
     }
 }
 
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
+
 /* 
     BREAKPOINTS:
     - We use breakpoints to create a resposive design that keeps in mind the various different screen sizes

@@ -17,8 +17,6 @@
         border-radius: 3px;
         overflow: hidden;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
-        &--front {
-        }
         &--back {
             transform: rotateY(180deg);
             &-1 {
@@ -138,7 +136,8 @@
         font-weight: 100;
     }
 
-    @include respond(tab-port){
+    @media only screen and (max-width: 56.25em),
+    only screen and (hover: none){
         // functionality
         height: auto;
         border-radius: 3px;
